@@ -92,30 +92,4 @@ public class GoliathBlocks {
             // no need to register bucket - handled within setupItems via FluidDefinition
         }
     }
-
-    public static class BlockDefinitionBuilder<T extends Block> extends FabricBlockSettings {
-        public Function<FabricBlockSettings, T> ctor;
-        public BiFunction<? super T, FabricItemSettings, BlockItem> blockItemCtor;
-        public final ArrayList<TagKey<Block>> tags = new ArrayList<>();
-        public SortOrder sortOrder = SortOrder.BLOCKS_OTHER;
-
-        protected BlockDefinitionBuilder(
-                FabricBlockSettings blockSettings,
-                Function<FabricBlockSettings, T> ctor,
-                BiFunction<? super T, FabricItemSettings, BlockItem> blockItemCtor,
-                List<TagKey<Block>> tags) {
-            this.ctor = ctor;
-            this.blockItemCtor = blockItemCtor;
-            this.tags.addAll(tags);
-        }
-
-        FabricBlockLootTableGenerator fabricBlockLootTableGenerator;
-
-
-        public static BlockDefinitionBuilder<Block> build(FabricBlockSettings settings) {
-            return new BlockDefinitionBuilder<>(settings, Block::new, BlockItem::new,
-                    List.of(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE));
-        }
-
-    }
 }

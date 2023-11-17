@@ -22,8 +22,6 @@ public class Goliath implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
-		LOGGER.info("Hello Fabric world!");
-
 		GoliathFluids.init();
 		GoliathItems.init();
 		GoliathBlocks.init();
