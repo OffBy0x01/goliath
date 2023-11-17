@@ -1,4 +1,4 @@
-package xyz.offby0x01.goliath.api;
+package xyz.offby0x01.goliath.api.tool;
 
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.player.PlayerEntity;
@@ -12,30 +12,6 @@ import xyz.offby0x01.goliath.Goliath;
 
 public class BlockBreaker {
     private BlockBreaker(){};
-
-    private static Direction getLookDirection(BlockPos blockPos, PlayerEntity player) {
-
-        double playerX = player.getX();
-        double playerY = player.getY() + player.getEyeHeight(player.getPose());
-        double playerZ = player.getZ();
-
-        double blockX = blockPos.getX() + 0.5;
-        double blockY = blockPos.getY() + 0.5;
-        double blockZ = blockPos.getZ() + 0.5;
-
-        double deltaX = playerX - blockX;
-        double deltaY = playerY - blockY;
-        double deltaZ = playerZ - blockZ;
-
-        double maxDelta = Math.max(Math.abs(deltaX), Math.max(Math.abs(deltaY), Math.abs(deltaZ)));
-
-        if (maxDelta == Math.abs(deltaX))
-            return deltaX > 0 ? Direction.WEST : Direction.EAST;
-        if (maxDelta == Math.abs(deltaY))
-            return deltaY > 0 ? Direction.DOWN : Direction.UP;
-
-        return deltaZ > 0 ? Direction.NORTH : Direction.SOUTH;
-    }
 
     private static Direction getBlockFaceDirection(World world, PlayerEntity player){
         Vec3d origin = player.getCameraPosVec(1);

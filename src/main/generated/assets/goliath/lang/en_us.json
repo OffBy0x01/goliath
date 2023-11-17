@@ -1,0 +1,20 @@
+{
+  "item.goliath.deepslate_hammer": "Deepslate Hammer",
+  "item.goliath.iron_hammer": "Iron Hammer",
+  "item.goliath.molten_andesite_alloy_bucket": "Molten Andesite Alloy Bucket",
+  "item.goliath.molten_brass_bucket": "Molten Brass Bucket",
+  "item.goliath.molten_copper_bucket": "Molten Copper Bucket",
+  "item.goliath.molten_gold_bucket": "Molten Gold Bucket",
+  "item.goliath.molten_iron_bucket": "Molten Iron Bucket",
+  "item.goliath.molten_zinc_bucket": "Molten Zinc Bucket",
+  "molten_andesite_alloy": "Molten Andesite Alloy",
+  "molten_brass": "Molten Brass",
+  "molten_copper": "Molten Copper",
+  "molten_gold": "Molten Gold",
+  "molten_iron": "Molten Iron",
+  "molten_zinc": "Molten Zinc",
+  "text.goliath.Empty": "Empty",
+  "text.goliath.Eu": "%s%s EU",
+  "text.goliath.EuMaxed": "%s / %s %sEU",
+  "text.goliath.EuT": "%s%s EU/t"
+}

@@ -1,7 +1,6 @@
-package xyz.offby0x01.goliath.api;
+package xyz.offby0x01.goliath.api.tool;
 
 import net.minecraft.block.BlockState;
-import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
@@ -37,6 +36,7 @@ public interface GoliathTool {
         if (canBreak) s = "true";
         Goliath.LOGGER.info(String.format("tryBreakBlock.canBreak -> %s", s));
         if (!canBreak) return;
+
 
         int radius = getRadius(toolStack);
         int penetration = getPenetration(toolStack);

@@ -1,6 +1,0 @@
-{
-  "parent": "item/handheld",
-  "textures": {
-    "layer0": "goliath:item/netherite_hammer"
-  }
-}

@@ -1,18 +1,13 @@
 package xyz.offby0x01.goliath;
 
 import net.fabricmc.api.ModInitializer;
-
-import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import xyz.offby0x01.goliath.api.GoliathTool;
-import xyz.offby0x01.goliath.items.ModItems;
+
+import xyz.offby0x01.goliath.register.GoliathBlockEntityTypes;
+import xyz.offby0x01.goliath.register.GoliathBlocks;
+import xyz.offby0x01.goliath.register.GoliathFluids;
+import xyz.offby0x01.goliath.register.GoliathItems;
 
 public class Goliath implements ModInitializer {
 	// This logger is used to write text to the console and the log file.
@@ -29,17 +24,12 @@ public class Goliath implements ModInitializer {
 
 		LOGGER.info("Hello Fabric world!");
 
-		ModItems.registerModItems();
+		GoliathFluids.init();
+		GoliathItems.init();
+		GoliathBlocks.init();
+		GoliathBlockEntityTypes.init();
 
-		PlayerBlockBreakEvents.BEFORE.register((World world, PlayerEntity player, BlockPos pos, BlockState state, BlockEntity blockEntity) -> {
-			if (world.isClient()) return true;
-
-			Item mainHandItem = player.getMainHandStack().getItem();
-			if (!(mainHandItem instanceof GoliathTool)) return true;
-
-			((GoliathTool)mainHandItem).tryBreakBlocks(world, pos, player);
-
-			return false;
-		});
+		LOGGER.info("Goliath setup done!");
 	}
+
 }
