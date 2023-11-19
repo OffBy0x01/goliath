@@ -14,10 +14,9 @@ import java.util.List;
 import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
 
-public class BlockDefinition<T extends Block> extends Definition {
+public class BlockDefinition<T extends Block> extends Definition implements ItemLike {
     public final T block;
     public final ItemDefinition<BlockItem> blockItem;
-    public BiConsumer<Block, LootTable.Builder> lootTableGenerator;
     public final List<TagKey<Block>> tags;
     private BiConsumer<Block, Item> onBlockRegistrationEvent;
 
@@ -46,17 +45,17 @@ public class BlockDefinition<T extends Block> extends Definition {
         return this;
     }
 
+    public T asBlock() {
+        return block;
+    }
+
+    @Override
     public Item asItem() {
         if (blockItem != null) {
             return blockItem.asItem();
         } else {
             return null;
         }
-
-    }
-
-    public T asBlock() {
-        return block;
     }
 
     @Override

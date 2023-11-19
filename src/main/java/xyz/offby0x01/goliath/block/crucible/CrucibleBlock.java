@@ -47,14 +47,15 @@ public class CrucibleBlock extends BlockWithEntity implements BlockEntityProvide
 
     @Override
     public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
-        if (state.getBlock() != newState.getBlock()) {
-            BlockEntity blockEntity = world.getBlockEntity(pos);
-//            if (blockEntity instanceof CrucibleBlockEntity) {
-//                ItemScatterer.spawn(world, pos, (CrucibleBlockEntity)blockEntity);
-//                world.updateComparators(pos,this);
-//            }
-            super.onStateReplaced(state, world, pos, newState, moved);
-        }
+        super.onStateReplaced(state, world, pos, newState, moved);
+//        if (state.getBlock() != newState.getBlock()) {
+//            BlockEntity blockEntity = world.getBlockEntity(pos);
+////            if (blockEntity instanceof CrucibleBlockEntity) {
+////                ItemScatterer.spawn(world, pos, (CrucibleBlockEntity)blockEntity);
+////                world.updateComparators(pos,this);
+////            }
+//            super.onStateReplaced(state, world, pos, newState, moved);
+//        }
     }
 
     @Override

@@ -23,6 +23,7 @@ import xyz.offby0x01.goliath.items.equipment.HammerLikeItem;
 import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Optional;
 import java.util.function.BiConsumer;
 import java.util.function.Function;
 
@@ -37,15 +38,11 @@ public final class GoliathItems {
             p -> new HammerLikeItem(ToolMaterials.STONE, 1, 0.25f, p.maxDamageIfAbsent(90), 1, 1), HAMMER);
     public static final ItemDefinition<HammerLikeItem> IRON_HAMMER = itemHandheld("Iron Hammer", "iron_hammer",
             p -> new HammerLikeItem(ToolMaterials.IRON, 2, 0.33f, p.maxDamageIfAbsent(180), 1, 1), HAMMER);
-//    public static final Item DEEPSLATE_HAMMER = registerItem("deepslate_hammer",new HammerLikeItem(ToolMaterials.STONE,1,0.25f, new FabricItemSettings().maxDamageIfAbsent(90), 1, 1));
-//    public static final Item DEEPSLATE_EXCAVATOR = registerItem("deepslate_excavator",new ShovelLikeItem(ToolMaterials.STONE,1,0.25f, new FabricItemSettings().maxDamageIfAbsent(135), 1, 1));
-//    public static final Item IRON_HAMMER = registerItem("iron_hammer",new HammerLikeItem(ToolMaterials.IRON,2,0.33f, new FabricItemSettings().maxDamageIfAbsent(180), 1, 1));
-//    public static final Item DIAMOND_HAMMER = registerItem("diamond_hammer",new HammerLikeItem(ToolMaterials.DIAMOND,3,0.85f, new FabricItemSettings().maxDamageIfAbsent(315), 2, 1));
-//    public static final Item NETHERITE_HAMMER = registerItem("netherite_hammer",new HammerLikeItem(ToolMaterials.NETHERITE,3,1f, new FabricItemSettings().maxDamageIfAbsent(495), 3, 1));
 
-
-    // Forge hammer, then the various hammers!
-//    public static final ItemDefinition<ForgeTool> IRON_HAMMER = itemHandheld("Iron Hammer", "iron_hammer", p -> new ForgeTool(Tiers.IRON, p), HAMMER);
+    public static final ItemDefinition<HammerLikeItem> DIAMOND_HAMMER = item("Diamond Hammer", "diamond_hammer",
+            s -> new HammerLikeItem(ToolMaterials.DIAMOND, 2, 0.4f, s.maxDamageIfAbsent(360), 1, 2),
+            (item, modelGenerator) -> modelGenerator.register(item, Models.HANDHELD),
+            SortOrder.HAMMER);
 
     public static <T extends Item> ItemDefinition<T> item(
             String englishName,

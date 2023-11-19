@@ -50,7 +50,7 @@ public class GoliathBlocks {
                 .sounds(BlockSoundGroup.ANVIL)
                 .pistonBehavior(PistonBehavior.BLOCK)),
             BlockItem::new,
-            (block, modelGenerator) -> modelGenerator.register(block.asItem(), Models.CUBE),
+            null,
             List.of(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE),
             SortOrder.BLOCKS_OTHER
     );

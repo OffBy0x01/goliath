@@ -2,14 +2,23 @@ package xyz.offby0x01.goliath.definition;
 
 import net.fabricmc.fabric.api.transfer.v1.fluid.FluidVariant;
 import net.minecraft.block.AbstractBlock;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.FluidBlock;
+import net.minecraft.data.client.Model;
+import net.minecraft.data.client.Models;
+import net.minecraft.entity.Entity;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.item.BucketItem;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 import xyz.offby0x01.goliath.fluid.GoliathBucketItem;
 import xyz.offby0x01.goliath.fluid.GoliathFlowableFluid;
 import xyz.offby0x01.goliath.items.SortOrder;
+import xyz.offby0x01.goliath.register.GoliathIdentifier;
 import xyz.offby0x01.goliath.register.GoliathItems;
+
+import java.util.Optional;
 
 public class FlowableFluidDefinition extends Definition implements FluidLike {
     public final int GOLIATH_FLUID_COLOR;
@@ -30,12 +39,25 @@ public class FlowableFluidDefinition extends Definition implements FluidLike {
         GOLIATH_FLUID_BUCKET_DEFINITION = GoliathItems.item(
                 englishName + " Bucket",
                 id + "_bucket",
-                itemSettings -> new GoliathBucketItem(GOLIATH_FLUID, itemSettings, color),
+                itemSettings -> new GoliathBucketItem(GOLIATH_FLUID, itemSettings.maxCount(1), color),
+                (item, modelGenerator) -> modelGenerator.register(
+                        item,
+                        new Model(
+                                Optional.of(new GoliathIdentifier("item/bucket")),
+                                Optional.empty()
+                        )
+                ),
                 SortOrder.BUCKETS
         );
+
         GOLIATH_FLUID.setBucketItem(GOLIATH_FLUID_BUCKET_DEFINITION.asItem());
 
-        GOLIATH_FLUID_BLOCK = new FluidBlock(GOLIATH_FLUID, AbstractBlock.Settings.copy(Blocks.LAVA));
+        GOLIATH_FLUID_BLOCK = new FluidBlock(GOLIATH_FLUID, AbstractBlock.Settings.copy(Blocks.LAVA)) {
+            @Override
+            public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
+                super.onEntityCollision(state, world, pos, entity);
+            }
+        };
         GOLIATH_FLUID_FLOWING.setFluidBlock(GOLIATH_FLUID_BLOCK);
         GOLIATH_FLUID.setFluidBlock(GOLIATH_FLUID_BLOCK);
 

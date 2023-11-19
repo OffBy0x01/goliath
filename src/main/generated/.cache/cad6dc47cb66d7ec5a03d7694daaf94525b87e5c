@@ -1,9 +1,13 @@
-// 1.20.2	2023-11-17T18:23:56.2357599	Goliath/Model Definitions
+// 1.20.2	2023-11-19T22:05:39.6055696	Goliath/Model Definitions
+f50e7fcdd9d4c03faa38b9cef76d641afc9f35aa assets\goliath\models\item\crucible.json
+b0c7c3375024c210033cdf997aa5235f293ce889 assets\goliath\blockstates\crucible.json
+d66980f9b0b53e51370481933232034b71092d2e assets\goliath\models\item\diamond_hammer.json
+5770cabfcfa65d594c38b3d2eb44e2df0a49611c assets\goliath\models\block\crucible.json
+e9f8c82174eabaf4e3363f40e5e3f76936a39a7d assets\goliath\models\item\molten_andesite_alloy_bucket.json
+6b2fda05d162b7e0753d3b79de0ca2e5448b3dc0 assets\goliath\models\item\iron_hammer.json
+e9f8c82174eabaf4e3363f40e5e3f76936a39a7d assets\goliath\models\item\molten_gold_bucket.json
+8a1f59b8a908a9f4d4666f97a7667f2b9b484efd assets\goliath\models\item\deepslate_hammer.json
 e9f8c82174eabaf4e3363f40e5e3f76936a39a7d assets\goliath\models\item\molten_copper_bucket.json
 e9f8c82174eabaf4e3363f40e5e3f76936a39a7d assets\goliath\models\item\molten_zinc_bucket.json
 e9f8c82174eabaf4e3363f40e5e3f76936a39a7d assets\goliath\models\item\molten_iron_bucket.json
-e9f8c82174eabaf4e3363f40e5e3f76936a39a7d assets\goliath\models\item\molten_andesite_alloy_bucket.json
-e9f8c82174eabaf4e3363f40e5e3f76936a39a7d assets\goliath\models\item\molten_gold_bucket.json
-f13d1a05661fdbbe166e577978b02f08fa26ecc2 assets\goliath\models\item\deepslate_hammer.json
-a37ade61e75523d3c32b458cb2dba588def686b3 assets\goliath\models\item\iron_hammer.json
 e9f8c82174eabaf4e3363f40e5e3f76936a39a7d assets\goliath\models\item\molten_brass_bucket.json

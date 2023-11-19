@@ -23,9 +23,10 @@ public class Goliath implements ModInitializer {
 		// Proceed with mild caution.
 
 		GoliathFluids.init();
-		GoliathItems.init();
 		GoliathBlocks.init();
 		GoliathBlockEntityTypes.init();
+		// items needs to be last as we have block items, fluid buckets, etc...
+		GoliathItems.init();
 
 		LOGGER.info("Goliath setup done!");
 	}

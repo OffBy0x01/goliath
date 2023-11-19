@@ -32,7 +32,7 @@ import xyz.offby0x01.goliath.items.SortOrder;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
-public class ItemDefinition<T extends Item> extends Definition {
+public class ItemDefinition<T extends Item> extends Definition implements ItemLike{
     private final T item;
     public final SortOrder sortOrder;
 
@@ -70,6 +70,7 @@ public class ItemDefinition<T extends Item> extends Definition {
         return stack.equals(item);
     }
 
+    @Override
     public T asItem() {
         return item;
     }
